@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 module.exports.connect = function() {
     connection.connect(function(err) {
         if (err) throw err;
-        console.log("DB Connected!");
+        console.log("BD Conectado!");
     });
 };
 
