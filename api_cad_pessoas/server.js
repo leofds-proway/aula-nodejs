@@ -46,6 +46,7 @@ app.get('/pessoas/:id', async (request, response) => {
 
 app.post('/pessoas', async (request, response) => {
     let sql = "insert into pessoas (nome, telefone, email, estadoCivil) values (?,?,?,?);";
+    console.log(request.body);
     try {
         if( request.body.nome === undefined || 
             request.body.telefone === undefined ||
@@ -97,6 +98,7 @@ app.put('/pessoas/:id', async (request, response) => {
 });
 
 app.delete('/pessoas/:id', async (request, response) => {
+    console.log(request.params.id);
     let sql = "delete from pessoas where id = ?;";
     try {
         let result = await db.query(sql,[request.params.id]);
